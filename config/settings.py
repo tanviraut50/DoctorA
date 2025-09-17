@@ -11,9 +11,23 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# SECURITY
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-secret")   # production मध्ये env-var वापरा
+DEBUG = os.environ.get("DJANGO_DEBUG", "False") == "True"
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "your-app.onrender.com").split(",")
+
+# Static files (served by WhiteNoise)
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"      # collectstatic will fill this
+STATICFILES_DIRS = [BASE_DIR / "static"]    # your project static folder
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +39,7 @@ SECRET_KEY = 'django-insecure-xwgyq&94=mx#)nnh6w*#h4_aj%s(_0#5hx_k!5a4e@#ornh#^w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +57,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,3 +145,7 @@ LOGOUT_URL = "logout/"
 # after LOGIN_URL = 'login' (if you set it)
 LOGIN_REDIRECT_URL = '/'   # send users to homepage after login
   # send users to homepage after logout
+
+# Media (uploads) — see note below (S3 vs Render disk)
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
