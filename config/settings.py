@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -86,7 +85,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'doctor_appointment.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 # Static files
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
@@ -147,10 +146,9 @@ LOGOUT_URL = "logout/"
 # after LOGIN_URL = 'login' (if you set it)
 LOGIN_REDIRECT_URL = '/'   # send users to homepage after login
   # send users to homepage after logout
-DATABASES = {
-    "default": dj_database_url.config(conn_max_age=600, ssl_require=True)
-}
+
 
 # Media (uploads) — see note below (S3 vs Render disk)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "doctor_appointmen.settings")
