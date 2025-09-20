@@ -41,7 +41,7 @@ SECRET_KEY = 'django-insecure-xwgyq&94=mx#)nnh6w*#h4_aj(_0#5hx_k!5a4e@#ornh#^w'
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ["doctor_appointmen.onrender.com", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["doctor_appointment.onrender.com", "127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -86,7 +86,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'doctor_appointmen.wsgi.application'
+WSGI_APPLICATION = 'doctor_appointment.wsgi.application'
 # Static files
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]

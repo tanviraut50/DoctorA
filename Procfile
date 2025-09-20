@@ -1,1 +1,1 @@
-gunicorn doctor_appointmen.wsgi:application
+gunicorn doctor_appointment.wsgi:application
