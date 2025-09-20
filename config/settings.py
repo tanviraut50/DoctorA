@@ -35,10 +35,10 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xwgyq&94=mx#)nnh6w*#h4_aj%s(_0#5hx_k!5a4e@#ornh#^w'
+SECRET_KEY = 'django-insecure-xwgyq&94=mx#)nnh6w*#h4_aj(_0#5hx_k!5a4e@#ornh#^w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ["doctor_appointmen.onrender.com", "127.0.0.1", "localhost"]
