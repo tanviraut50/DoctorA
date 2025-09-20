@@ -40,7 +40,7 @@ SECRET_KEY = 'django-insecure-xwgyq&94=mx#)nnh6w*#h4_aj(_0#5hx_k!5a4e@#ornh#^w'
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ["doctor_appointmen.onrender.com", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["doctora9100.onrender.com", "127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -151,4 +151,4 @@ LOGIN_REDIRECT_URL = '/'   # send users to homepage after login
 # Media (uploads) — see note below (S3 vs Render disk)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "doctor_appointmen.settings")
+
