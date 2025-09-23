@@ -155,6 +155,9 @@ MEDIA_ROOT = BASE_DIR / "media"
 ALLOWED_HOSTS = ['doctora.onrender.com', '127.0.0.1', 'localhost']
 
 
+ALLOWED_HOSTS = ['https://doctora-3-j6sa.onrender.com', '127.0.0.1', 'localhost']
+
+
 import dj_database_url
 
 DATABASES = {
