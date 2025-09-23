@@ -152,7 +152,7 @@ LOGIN_REDIRECT_URL = '/'   # send users to homepage after login
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-ALLOWED_HOSTS = ['https://doctora-2-v62q.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['doctora.onrender.com', '127.0.0.1', 'localhost']
 
 
 import dj_database_url
