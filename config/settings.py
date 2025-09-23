@@ -153,3 +153,10 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 ALLOWED_HOSTS = ['doctora-9100.onrender.com', '127.0.0.1', 'localhost']
+import dj_database_url
+DATABASES = {
+       'default': dj_database_url.config(
+           default='sqlite:///db.sqlite3',  # fallback to SQLite if DATABASE_URL not set
+          
+       )
+   }
