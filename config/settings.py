@@ -163,18 +163,11 @@ DATABASES = {
           
        )
    }
-DATABASES = {
-    'default': dj_database_url.config()
-    
-}
-
 
 
 
 DATABASES = {
     "default": dj_database_url.config(
-        default="sqlite:///db.sqlite3",  # fallback for local dev
-      
-       
+        default=os.environ.get("DATABASE_URL")
     )
 }
